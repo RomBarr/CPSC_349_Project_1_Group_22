@@ -4,10 +4,39 @@ title: Home
 ---
 <header>
     <h1>{{ title }} </h1>
+
+    <!--Navegation -->
+    <nav>
+        <ul>
+            <li><a href = "/">Home</a></li>
+            <li><a href = "#">Personal page</a></li>
+            <li><a href = "#">About me</a></li>
+        </ul>
+    </nav>
 </header>
+
+<div id="description">
+    <span>This is a set of photos about books and writing. It was taken by author xxx with Nikon D5200 in February. Mode descriptions can be added here.</span>
+</div>
+<hr>
+<div id ="content">
+    <div id="photos">
+        <table id="photos_table">
+            
+            {% tablerow post in photos.7kmsoc3.media cols:6%}
+                <a href="newpage?id={{post.id}}">
+                    <img src="{{post.src.tiny}}"/>
+                </a>
+            {% endtablerow %}
+        </table>
+    </div>
+</div>
 
 <footer>
     <hr>
+
+    
+
     <p>
         <small>
             <a href="https://www.pexels.com">Photos provided by Pexels</a>
