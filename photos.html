@@ -5,8 +5,7 @@ pagination:
   data: photos.7kmsoc3.media
   size: 1
   alias: photo
-permalink: '/photos/{{photo.id|slugify}}/'
-
+permalink: '/{{ photo.id | slugify }}/'
 ---
 
 <nav>
@@ -17,10 +16,17 @@ permalink: '/photos/{{photo.id|slugify}}/'
   </ul>
 </nav>
 
-<main style="background-color: {{photo.avg_color}};">
-  <img src="{{photo.src.large}}" alt="{{photo.alt}}">
+<header>
+  <h1>{{ title }}</h1>
+</header>
+
+<main>
+  <section style="background-color: {{ photo.avg_color }};">
+    <img src="{{ photo.src.large }}" alt="{{ photo.alt }}">
+  </section>
+
+  <p>Photographer: {{ photo.photographer }}</p>
+
+  <p><a href="{{ photo.photographer_url }}">{{ photo.photographer }}'s Pexels Website</a></p>
 </main>
 
-
-<p>Photographer: {{photo.photographer}}</p>
-<p><a href="{{photo.photographer_url}}">{{photo.photographer}}'s Pexels Website</a></p>
