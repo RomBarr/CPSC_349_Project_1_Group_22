@@ -1,0 +1,26 @@
+---
+layout: base
+title: Photo 
+pagination: 
+  data: photos.7kmsoc3.media
+  size: 1
+  alias: photo
+permalink: '/photos/{{photo.id|slugify}}/'
+
+---
+
+<nav>
+  <ul>
+  <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+
+  <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+  </ul>
+</nav>
+
+<main style="background-color: {{photo.avg_color}};">
+  <img src="{{photo.src.large}}" alt="{{photo.alt}}">
+</main>
+
+
+<p>Photographer: {{photo.photographer}}</p>
+<p><a href="{{photo.photographer_url}}">{{photo.photographer}}'s Pexels Website</a></p>
