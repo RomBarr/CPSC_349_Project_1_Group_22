@@ -26,7 +26,7 @@ title: Home
         <table id="photos_table">
 
             {% tablerow post in photos.7kmsoc3.media cols:6%}
-                <a href="newpage?id={{post.id}}">
+                <a href="{{post.id}}">
                     <img src="{{post.src.tiny}}" alt="{{post.alt}}"/>
                 </a>
             {% endtablerow %}
