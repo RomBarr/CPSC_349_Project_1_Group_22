@@ -1,7 +1,7 @@
 ---
 layout: base
-title: Photo 
-pagination: 
+title: Photo
+pagination:
   data: photos.7kmsoc3.media
   size: 1
   alias: photo
@@ -10,9 +10,13 @@ permalink: '/{{ photo.id | slugify }}/'
 
 <nav>
   <ul>
+  <li><a href="{{ pagination.href.first }}">First</a></li>
   <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-
+  <li>
+    Page {{ pagination.pageNumber | plus: 1 }}
+  </li>
   <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+  <li><a href="{{ pagination.href.last }}">Last</a></li>
   </ul>
 </nav>
 
@@ -29,4 +33,3 @@ permalink: '/{{ photo.id | slugify }}/'
 
   <p><a href="{{ photo.photographer_url }}">{{ photo.photographer }}'s Pexels Website</a></p>
 </main>
-
