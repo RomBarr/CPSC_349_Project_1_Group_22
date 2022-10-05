@@ -10,28 +10,27 @@ title: Home
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/photos/0/">Photos</a></li>
+            <li><a href="/photos/1/">Photos</a></li>
             <li><a href="about.html">About Us</a></li>
         </ul>
     </nav>
 </header>
 <main>
-<div id="description">
     <p>This is a set of photos about books and writing. It was taken by author xxx with Nikon D5200 in February.
-        Mode descriptions can be added here.</p>
-</div>
+        Mode descriptions can be added here.
+    </p>
+    
 <hr>
-<div id ="content">
-    <div id="photos">
-        <table id="photos_table">
-            {% assign page = 0 %}
-            {% tablerow post in photos.7kmsoc3.media cols:3%}
-                {% assign page = page | plus: 1%}
-                <a href="photos/{{ page }}">
-                    <img src="{{post.src.tiny}}" alt="{{post.alt}}"/>
-                </a>
-            {% endtablerow %}
-        </table>
-    </div>
-</div>
+
+<section>
+    {% assign page = 0 %}
+    {% for post in photos.7kmsoc3.media cols:3%}
+        {% assign page = page | plus: 1%}
+        <aside>
+            <a href="photos/{{ page }}">
+                <img src="{{post.src.tiny}}" alt="{{post.alt}}"/>
+            </a>
+        </aside>
+    {% endfor %}
+</section>
 </main>
