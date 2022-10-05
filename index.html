@@ -10,7 +10,7 @@ title: Home
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/photos/">Photos</a></li>
+            <li><a href="/photos/0/">Photos</a></li>
             <li><a href="about.html">About Us</a></li>
         </ul>
     </nav>
@@ -26,11 +26,10 @@ title: Home
         <table id="photos_table">
             {% assign page = 0 %}
             {% tablerow post in photos.7kmsoc3.media cols:3%}
-
-                <a href="photos/{% increment page %}">
+                {% assign page = page | plus: 1%}
+                <a href="photos/{{ page }}">
                     <img src="{{post.src.tiny}}" alt="{{post.alt}}"/>
                 </a>
-                
             {% endtablerow %}
         </table>
     </div>
