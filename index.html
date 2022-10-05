@@ -3,7 +3,6 @@ layout: base
 title: Home
 ---
 
-<html>
 <header>
     <h1>{{ title }} </h1>
     
@@ -16,7 +15,7 @@ title: Home
         </ul>
     </nav>
 </header>
-
+<main>
 <div id="description">
     <p>This is a set of photos about books and writing. It was taken by author xxx with Nikon D5200 in February.
         Mode descriptions can be added here.</p>
@@ -27,23 +26,11 @@ title: Home
         <table id="photos_table">
 
             {% tablerow post in photos.7kmsoc3.media cols:6%}
-                <a href="{{post.id}}">
+                <a href="photos/{{forLoop.index0}}">
                     <img src="{{post.src.tiny}}" alt="{{post.alt}}"/>
                 </a>
             {% endtablerow %}
         </table>
     </div>
 </div>
-
-<footer>
-    <hr>
-
-
-
-    <p>
-        <small>
-            <a href="https://www.pexels.com">Photos provided by Pexels</a>
-        </small>
-    </p>
-</footer>
-</html>
+</main>
