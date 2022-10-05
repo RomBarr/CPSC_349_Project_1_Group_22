@@ -24,11 +24,13 @@ title: Home
 <div id ="content">
     <div id="photos">
         <table id="photos_table">
+            {% assign page = 0 %}
+            {% tablerow post in photos.7kmsoc3.media cols:3%}
 
-            {% tablerow post in photos.7kmsoc3.media cols:6%}
-                <a href="photos/{{forLoop.index0}}">
+                <a href="photos/{% increment page %}">
                     <img src="{{post.src.tiny}}" alt="{{post.alt}}"/>
                 </a>
+                
             {% endtablerow %}
         </table>
     </div>
