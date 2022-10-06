@@ -27,11 +27,11 @@ permalink: 'photos/{{ pagination.pageNumber | plus: 1 }}/'
 <main>
   <section style="background-color: {{ photo.avg_color }};">
     <h2>Photo with caption</h2>
+    <hr>
     <figure>
     <img src="{{ photo.src.large }}" alt="{{ photo.alt }}">
     <figcaption>{{photo.alt}}</figcaption>
     </figure>
-
   </section>
 
   <p>Photographer: {{ photo.photographer }}</p>
