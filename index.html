@@ -1,44 +1,36 @@
-
+---
+layout: base
+title: Home
+---
 
 <header>
     <h1>{{ title }} </h1>
-
-    <!--Navegation -->
+    
+    <!--Navigation -->
     <nav>
         <ul>
-            <li><a href = "/">Home</a></li>
-            <li><a href = "#">Personal page</a></li>
-            <li><a href = "about.html">About Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/photos/1/">Photos</a></li>
+            <li><a href="about.html">About Us</a></li>
         </ul>
     </nav>
 </header>
-
-<div id="description">
-    <p>This is a set of photos about books and writing. It was taken by author xxx with Nikon D5200 in February. 
-        Mode descriptions can be added here.</p>
-</div>
-<hr>
-<div id ="content">
-    <div id="photos">
-        <table id="photos_table">
-
-            {% tablerow post in photos.7kmsoc3.media cols:6%}
-                <a href="{{post.id}}">
-                    <img src="{{post.src.tiny}}" alt="{{post.alt}}"/>
-                </a>
-            {% endtablerow %}
-        </table>
-    </div>
-</div>
-
-<footer>
-    <hr>
-
-    
-
-    <p>
-        <small>
-            <a href="https://www.pexels.com">Photos provided by Pexels</a>
-        </small>
+<main>
+    <p>This is a set of photos about books and writing. It was taken by author xxx with Nikon D5200 in February.
+        Mode descriptions can be added here.
     </p>
-</footer>
+    
+<hr>
+
+<section>
+    {% assign page = 0 %}
+    {% for post in photos.7kmsoc3.media cols:3%}
+        {% assign page = page | plus: 1%}
+        <aside>
+            <a href="photos/{{ page }}">
+                <img src="{{post.src.tiny}}" alt="{{post.alt}}"/>
+            </a>
+        </aside>
+    {% endfor %}
+</section>
+</main>
